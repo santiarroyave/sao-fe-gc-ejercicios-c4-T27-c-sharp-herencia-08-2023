@@ -13,6 +13,8 @@ namespace M5
         const int DEF_SOU_MINIM = 3000;
         const int DEF_SOU_MAXIM = 5000;
 
+        double irpf = 0.26;
+
         int souMaxim = 20;
         public Manager() { }
 
@@ -27,6 +29,19 @@ namespace M5
                 DEF_SOU_MINIM, 
                 DEF_SOU_MAXIM, 
                 estat);
+
+            souBrutMensual = salari;
+            souNetMensual = salari - (salari * irpf);
+            souBrutAnual = souBrutMensual * 12;
+            souNetAnual = souNetMensual * 12;
+            Console.WriteLine("- Sou anual: [Brut: {0} EUR], [Net: {1} EUR]\n- Sou mensual: [Brut: {2} EUR], [Net: {3} EUR]\n- IRPF: {4} %", 
+                souBrutAnual, 
+                souNetAnual, 
+                souBrutMensual,
+                souNetMensual, 
+                irpf * 100);
+
+            Console.WriteLine();
         }
     }
 }

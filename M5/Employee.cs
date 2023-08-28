@@ -24,6 +24,8 @@ namespace M5
                 percentatge * 100,
                 DEF_SOU_MINIM,
                 estat);
+
+            Console.WriteLine();
         }
     }
 }

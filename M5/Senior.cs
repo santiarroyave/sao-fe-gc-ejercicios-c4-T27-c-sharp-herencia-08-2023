@@ -12,6 +12,9 @@ namespace M5
         double percentatge = -0.05;
         const int DEF_SOU_MINIM = 2700;
         const int DEF_SOU_MAXIM = 4000;
+
+        double irpf = 0.24;
+
         public Senior() { }
 
         public override void AfegirSalari(double salari)
@@ -25,6 +28,19 @@ namespace M5
                 DEF_SOU_MINIM,
                 DEF_SOU_MAXIM,
                 estat);
+
+            souBrutMensual = salari;
+            souNetMensual = salari - (salari * irpf);
+            souBrutAnual = souBrutMensual * 12;
+            souNetAnual = souNetMensual * 12;
+            Console.WriteLine("- Sou anual: [Brut: {0} EUR], [Net: {1} EUR]\n- Sou mensual: [Brut: {2} EUR], [Net: {3} EUR]\n- IRPF: {4} %",
+                souBrutAnual,
+                souNetAnual,
+                souBrutMensual,
+                souNetMensual,
+                irpf * 100);
+
+            Console.WriteLine();
         }
     }
 }

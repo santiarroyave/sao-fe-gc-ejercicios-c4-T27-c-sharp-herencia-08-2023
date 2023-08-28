@@ -14,6 +14,11 @@ namespace M5
 
         private const int DEF_SALARI = 0;
 
+        protected double souBrutMensual;
+        protected double souNetMensual;
+        protected double souBrutAnual;
+        protected double souNetAnual;
+
         public Empleat()
         {
             salari = DEF_SALARI;
@@ -73,6 +78,16 @@ namespace M5
             {
                 return "El sou no es vàlid.";
             }
+        }
+
+        public void Bonus()
+        {
+            double bonusPercent = 0.1;
+            double bonusAnual = souBrutAnual * bonusPercent;
+            salari += bonusAnual / 12 ;
+
+
+            Console.WriteLine("{0}: Bonus del {1} % anual afegit. Total: {2} EUR anuals.", GetType().Name, bonusPercent * 100, bonusAnual);
         }
     }
 }

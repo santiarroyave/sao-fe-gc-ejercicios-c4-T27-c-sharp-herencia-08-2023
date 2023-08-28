@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,40 @@ namespace M5
 
             Senior senior = new Senior();
             senior.AfegirSalari(1500);
+
+            //MILESTONE 3
+            //Fes una modificació als models, aquest han de tenir sou net y brut mensual, sou net y brut anual.
+            //El sou net s’ha d’autocalcular al restar el % d’IRPF del sou brut (Boss: 32 %, Manager: 26 %, Senior: 24 %, Mid: 15 %, Junior: 2 %).
+            //El voluntari pot tenir un ajut governamental podent cobrar fins a 300€ però s'ha d'indicar que és un ajut.
+            //Has de crear una funció que permeti emetre un bonus a tota la plantilla. Aquest bonus és un 10 % del sou anual de cada empleat. Els volunteers no reben aquest bonus.
+            Console.WriteLine("MILESTONE 3\n-----------------------------------------------------------------");
+            volunteer.DonarAjut(230);
+
+            List<Empleat> novaPlantilla = new List<Empleat>
+            {
+                new Manager(),
+                new Boss(),
+                new Volunteer(),
+                new Junior(),
+                new Mid(),
+                new Senior()
+            };
+
+            // Afegeix un sou de exemple per a tots els empleats
+            foreach (var empleat in novaPlantilla)
+            {
+                empleat.AfegirSalari(2500);
+                
+            }
+
+            // Afegeix bonus anual a la plantilla
+            foreach (var empleat in novaPlantilla)
+            {
+                if (!(empleat is Volunteer))
+                {
+                    empleat.Bonus();
+                }
+            }
         }
     }
 }
