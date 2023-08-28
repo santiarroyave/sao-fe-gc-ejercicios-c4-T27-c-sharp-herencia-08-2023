@@ -23,27 +23,18 @@ namespace M5
             manager.AfegirSalari(4000);
 
             Boss boss = new Boss();
-            boss.AfegirSalari(3000);
+            boss.AfegirSalari(8000);
 
             Employee employee = new Employee();
-            employee.AfegirSalari(100);
+            employee.AfegirSalari(1500);
 
             Volunteer volunteer = new Volunteer();
-            volunteer.AfegirSalari(0);
+            volunteer.AfegirSalari(1500);
 
 
             //MILESTONE 2
             //Modifica el programa perquè existeixin 3 tipus d'empleats. Junior, Mid i Senior.
             //Han d'heredar d'empleats. Aquests empleats tenen una reducció del: 15, 10 i 5% de sou respectivament respecte a la base.
-            Junior junior = new Junior();
-            junior.AfegirSalari(100);
-
-            Mid mid = new Mid();
-            mid.AfegirSalari(100);
-
-            Senior senior = new Senior();
-            senior.AfegirSalari(100);
-
             //Afegeix una validació de sous al introduir-los (utilitza excepcions) :
             //  • Boss: Ha de cobrar més de 8000€
             //  • Manager: Ha de cobrar més de 3000 però menys de 5000€
@@ -51,22 +42,14 @@ namespace M5
             //  • Mid: Ha de cobrar més de 1800 pero menys de 2500€
             //  • Junior: Ha de cobrar més de 900 pero menys de 1600€
             //  • Volunteer: S'ha de validar que no cobra.
+            Junior junior = new Junior();
+            junior.AfegirSalari(1500);
 
-            Console.WriteLine();
+            Mid mid = new Mid();
+            mid.AfegirSalari(1500);
 
-            //boss.ValidarSou();
-            //manager.ValidarSou();
-            //senior.ValidarSou();
-            //mid.ValidarSou();
-            //junior.ValidarSou();
-            //volunteer.ValidarSou();
-
-
-
-
-
-
-
+            Senior senior = new Senior();
+            senior.AfegirSalari(1500);
         }
     }
 }

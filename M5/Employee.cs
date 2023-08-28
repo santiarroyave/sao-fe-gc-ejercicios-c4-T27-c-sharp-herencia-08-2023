@@ -15,8 +15,15 @@ namespace M5
 
         public override void AfegirSalari(double salari)
         {
-            double salariAmbPercent = salari + (salari * percentatge);
-            ValidarPerAfegir(salariAmbPercent, DEF_SOU_MINIM);
+            salari += (salari * percentatge);
+            string estat = ValidarSalari(salari, DEF_SOU_MINIM);
+
+            Console.WriteLine("{0}:\n- Nou salari {1} EUR (inclòs {2}%).",
+                GetType().Name,
+                salari,
+                percentatge * 100,
+                DEF_SOU_MINIM,
+                estat);
         }
     }
 }

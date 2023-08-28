@@ -16,13 +16,15 @@ namespace M5
 
         public override void AfegirSalari(double salari)
         {
-            double salariAmbPercent = salari + (salari * percentatge);
-            ValidarPerAfegir(salariAmbPercent, DEF_SOU_MINIM, DEF_SOU_MAXIM);
-        }
-        public void ValidarSou(int souMinim = DEF_SOU_MINIM, int souMaxim = DEF_SOU_MAXIM)
-        {
-            //  • Volunteer: S'ha de validar que no cobra.
-            base.ValidarSou(souMinim, souMaxim);
+            salari += (salari * percentatge);
+            string estat = ValidarSalari(salari, DEF_SOU_MINIM, DEF_SOU_MAXIM);
+
+            Console.WriteLine("{0}:\n- Nou salari {1} EUR. Màxim: {4} EUR. Estat: {5}",
+                GetType().Name,
+                salari, percentatge * 100,
+                DEF_SOU_MINIM,
+                DEF_SOU_MAXIM,
+                estat);
         }
     }
 }

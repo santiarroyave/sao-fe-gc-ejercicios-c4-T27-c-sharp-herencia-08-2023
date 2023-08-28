@@ -18,14 +18,15 @@ namespace M5
 
         public override void AfegirSalari(double salari)
         {
-            double salariAmbPercent = salari + (salari * percentatge);
-            ValidarPerAfegir(salariAmbPercent, DEF_SOU_MINIM, DEF_SOU_MAXIM);
-        }
+            salari += (salari * percentatge);
+            string estat = ValidarSalari(salari, DEF_SOU_MINIM, DEF_SOU_MAXIM);
 
-        public void ValidarSou(int souMinim = DEF_SOU_MINIM, int souMaxim = DEF_SOU_MAXIM)
-        {
-            //  • Manager: Ha de cobrar més de 3000 però menys de 5000€
-            base.ValidarSou(souMinim, souMaxim);
+            Console.WriteLine("{0}:\n- Nou salari {1} EUR (inclòs {2}%). Mínim: {3} EUR. Màxim: {4} EUR. Estat: {5}", 
+                GetType().Name, 
+                salari, percentatge * 100, 
+                DEF_SOU_MINIM, 
+                DEF_SOU_MAXIM, 
+                estat);
         }
     }
 }
