@@ -10,11 +10,14 @@ namespace M5
     {
         //-Boss: cobren un 50 % més del seu salari mensual.
         double percentatge = 0.5;
+        //-Boss: Ha de cobrar més de 8000€
+        const int DEF_SOU_MINIM = 8000;
         public Boss() { }
 
         public override void AfegirSalari(double salari)
         {
-            this.salari = salari + (salari * percentatge);
+            double salariAmbPercent = salari + (salari * percentatge);
+            ValidarPerAfegir(salariAmbPercent, DEF_SOU_MINIM);
         }
     }
 }

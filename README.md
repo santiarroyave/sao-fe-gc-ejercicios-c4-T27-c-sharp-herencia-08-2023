@@ -13,7 +13,7 @@
 ## M5 Exercicio Jobs
 [Enunciados M5 (pdf)]()
 - Milestone 1: Crear clase empleado y 4 empleados que hereden de esa clase, cada uno cobrando un porcentaje diferente.
-- Milestone 2: 
+- Milestone 2: Añadir 3 empleados más y validar sueldos.
 - Milestone 3: 
 
 ## M6 Exercicio Vehicles

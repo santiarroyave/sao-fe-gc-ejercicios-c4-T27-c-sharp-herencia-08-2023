@@ -20,31 +20,53 @@ namespace M5
             //S’ha de crear un projecte, C# de consola, amb les funcionalitats demanades per tal que el software funcioni correctament.
 
             Manager manager = new Manager();
-            manager.AfegirSalari(100);
-            manager.MostrarSalari();
+            manager.AfegirSalari(4000);
 
             Boss boss = new Boss();
-            boss.AfegirSalari(100);
-            boss.MostrarSalari();
+            boss.AfegirSalari(3000);
 
             Employee employee = new Employee();
             employee.AfegirSalari(100);
-            employee.MostrarSalari();
 
             Volunteer volunteer = new Volunteer();
-            volunteer.AfegirSalari(100);
-            volunteer.MostrarSalari();
+            volunteer.AfegirSalari(0);
+
 
             //MILESTONE 2
             //Modifica el programa perquè existeixin 3 tipus d'empleats. Junior, Mid i Senior.
-            //Han d'heretar d'empleats. Aquests empleats tenen una reducció del: 15, 10 i 5% de sou respectivament respecte a la base.
+            //Han d'heredar d'empleats. Aquests empleats tenen una reducció del: 15, 10 i 5% de sou respectivament respecte a la base.
+            Junior junior = new Junior();
+            junior.AfegirSalari(100);
 
-            //Afegeix una validació de sous al introduir-los(utilitza excepcions) :
+            Mid mid = new Mid();
+            mid.AfegirSalari(100);
+
+            Senior senior = new Senior();
+            senior.AfegirSalari(100);
+
+            //Afegeix una validació de sous al introduir-los (utilitza excepcions) :
             //  • Boss: Ha de cobrar més de 8000€
             //  • Manager: Ha de cobrar més de 3000 però menys de 5000€
             //  • Senior: Ha de cobrar més de 2700 pero menys de 4000€
             //  • Mid: Ha de cobrar més de 1800 pero menys de 2500€
-            //  • Junior: Ha de cobrar més de 900 pero menys de 1600€ Volunteer: S'ha de validar que no cobra.
+            //  • Junior: Ha de cobrar més de 900 pero menys de 1600€
+            //  • Volunteer: S'ha de validar que no cobra.
+
+            Console.WriteLine();
+
+            //boss.ValidarSou();
+            //manager.ValidarSou();
+            //senior.ValidarSou();
+            //mid.ValidarSou();
+            //junior.ValidarSou();
+            //volunteer.ValidarSou();
+
+
+
+
+
+
+
         }
     }
 }

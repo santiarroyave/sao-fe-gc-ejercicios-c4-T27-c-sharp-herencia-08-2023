@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace M5
 {
-    internal class Manager : Empleat
+    internal class Senior : Empleat
     {
-        //- Manager: cobren un 10 % més del seu salari mensual.
-        double percentatge = 0.1;
-        const int DEF_SOU_MINIM = 3000;
-        const int DEF_SOU_MAXIM = 5000;
-
-        int souMaxim = 20;
-        public Manager() { }
+        //Aquest empleat te una reducció del: 5%.
+        double percentatge = -0.05;
+        const int DEF_SOU_MINIM = 2700;
+        const int DEF_SOU_MAXIM = 4000;
+        public Senior() { }
 
         public override void AfegirSalari(double salari)
         {
@@ -24,7 +22,7 @@ namespace M5
 
         public void ValidarSou(int souMinim = DEF_SOU_MINIM, int souMaxim = DEF_SOU_MAXIM)
         {
-            //  • Manager: Ha de cobrar més de 3000 però menys de 5000€
+            //  • Senior: Ha de cobrar més de 2700 pero menys de 4000€
             base.ValidarSou(souMinim, souMaxim);
         }
     }
