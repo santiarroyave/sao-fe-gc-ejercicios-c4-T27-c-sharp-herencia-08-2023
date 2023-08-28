@@ -1,6 +1,6 @@
 # C4-T27 C# Herencia
-
-<!-- ## Enlaces al código
+<!-- 
+## Enlaces al código
 - M5 Exercicio Jobs
     - [Milestone 1]()
     - [Milestone 2]()
@@ -9,20 +9,20 @@
     - [Milestone 1]()
     - [Milestone 2]()
     - [Milestone 3]()
-
+    -->
 ## M5 Exercicio Jobs
-[Enunciados M5 (pdf)]()
+<!-- [Enunciados M5 (pdf)]() -->
 - Milestone 1: Crear clase empleado y 4 empleados que hereden de esa clase, cada uno cobrando un porcentaje diferente.
 - Milestone 2: Añadir 3 empleados más y validar sueldos.
-- Milestone 3: 
+- Milestone 3: Añadir sueldos mensuales y anuales, ayuda a los voluntarios y bonus anual.
 
-## M6 Exercicio Vehicles
+<!-- ## M6 Exercicio Vehicles
 [Enunciados M6 (pdf)]()
 - Milestone 1: 
 - Milestone 2: 
 - Milestone 3:  -->
 
-## Notas
+<!-- ## Notas
 
 ### Heredar métodos
 - Al crear un método en la clase base no necesariametne es obligatorio que la clase derivada lo herede.
@@ -49,5 +49,5 @@ internal class Manager : Empleat
     {
         Console.WriteLine("Hola");
     }
-}
+} -->
 ```
