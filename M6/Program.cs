@@ -62,6 +62,9 @@ namespace M6
                             Console.Clear();
                             CrearMoto();
                             break;
+                        case 3:
+                            Console.Clear();
+                            CrearCamio();
                         default:
                             Console.Clear();
                             Console.WriteLine("Número no vàlid. Torna-ho a intentar.\n");
@@ -103,6 +106,22 @@ namespace M6
             Console.ReadLine();
             Console.Clear();
         }
+
+        public static void CrearCamio()
+        {
+            var (matricula, marca, color) = DemanarDadesBasiques();
+            Camio camio1 = new Camio(matricula, marca, color);
+
+            camio1.AfegirRodesDavanteres();
+            camio1.AfegirRodesTraseres();
+
+            camio1.ToString();
+
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+
 
         public static (string Matricula, string Marca, string Color) DemanarDadesBasiques()
         {
