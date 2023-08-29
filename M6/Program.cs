@@ -39,12 +39,27 @@ namespace M6
             //  4) Afegir - li les rodes davanteres corresponents, demanant a l’usuari la marca i el diametre.
 
             IniciarPrograma();
+
+
+            //MILESTONE 2
+
+            //FASE 1:
+            //Modifica l’exercici per afegir camió com a vehicle disponible.
+
+            //FASE 2:
+            //Crea dos classes: Titular de Vehicle i Conductor(també fes una classe Persona com a herència).El conductor ha de tenir, nom, cognoms, data de naixement i llicencia de conduir. Aquest ultima també serà una classe a part que tindrà: ID, tipus de llicència, nom complet i data de caducitat. El Titular ha de tenir els mateixos valors que el conductor, però també s'ha de registrar si té assegurança i garatge propi.
+
+            //FASE 3:
+            //Abans de seleccionar el vehicle has de crear l'usuari (tipus Titular) amb totes les dades ja emplenades.
+            //Per poder crear un vehicle has de tenir la llicència adequada, de no tenir - la t'ha d'avisar amb una excepció.
+            //A l'acabar de crear el vehicle, ha de demanar si el titular també serà el conductor. De no ser així has de crear un nou usuari.En fer-ho hi ha de comprovar si la llicència del conductor li permet conduir el vehicle creat.
         }
 
         public static void IniciarPrograma()
         {
             while (true)
             {
+                CrearTitular();
                 Console.WriteLine("Indica quin vehicle vols crear:");
                 Console.WriteLine("1. Cotxe");
                 Console.WriteLine("2. Moto");
@@ -65,6 +80,7 @@ namespace M6
                         case 3:
                             Console.Clear();
                             CrearCamio();
+                            break;
                         default:
                             Console.Clear();
                             Console.WriteLine("Número no vàlid. Torna-ho a intentar.\n");
@@ -107,6 +123,7 @@ namespace M6
             Console.Clear();
         }
 
+        //MILESTONE 2: FASE 1:
         public static void CrearCamio()
         {
             var (matricula, marca, color) = DemanarDadesBasiques();
@@ -117,6 +134,85 @@ namespace M6
 
             camio1.ToString();
 
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        //MILESTONE 2: FASE 3:
+        //Abans de seleccionar el vehicle has de crear l'usuari (tipus Titular) amb totes les dades ja emplenades.
+        //Per poder crear un vehicle has de tenir la llicència adequada, de no tenir-la t'ha d'avisar amb una excepció.
+        //A l'acabar de crear el vehicle, ha de demanar si el titular també serà el conductor. De no ser així has de crear un nou usuari. En fer-ho hi ha de comprovar si la llicència del conductor li permet conduir el vehicle creat.
+        public static void CrearTitular()
+        {
+            string nom;
+            string cognoms;
+            DateTime dataNaixement;
+            bool asseguranca;
+            bool garatgePropi;
+
+            Console.WriteLine("Creant titular:");
+            Console.Write("Nom: ");
+            nom = Console.ReadLine();
+
+            Console.Write("Cognoms: ");
+            cognoms = Console.ReadLine();
+
+            // Data naixement
+            Console.WriteLine("Introdueix la teva data de naixement(formato: dd/mm/yyyy):");
+            while (true)
+            {
+                string dataNaixementInput = Console.ReadLine();
+
+                if (DateTime.TryParseExact(dataNaixementInput, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dataNaixement))
+                {
+                    Console.WriteLine($"Data de naixement: {dataNaixement.Date}");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Format incorrecte, prova un altre cop.");
+                }
+            }
+
+            // Assegurança
+            Console.WriteLine("Assegurança (si / no): ");
+            string assegurancaInput = Console.ReadLine();
+
+            if (assegurancaInput.ToLower() == "si")
+            {
+                asseguranca = true;
+            }
+            else if (assegurancaInput.ToLower() == "no")
+            {
+                asseguranca = false;
+            }
+            else
+            {
+                Console.WriteLine("Opció inválida. S'asumirá \"no\".");
+                asseguranca = false;
+            }
+
+            // Garatge propi
+            Console.WriteLine("Garatge propi (si / no): ");
+            string garatgePropiInput = Console.ReadLine();
+
+            if (garatgePropiInput.ToLower() == "si")
+            {
+                garatgePropi = true;
+            }
+            else if (garatgePropiInput.ToLower() == "no")
+            {
+                garatgePropi = false;
+            }
+            else
+            {
+                Console.WriteLine("Opció inválida. S'asumirá \"no\".");
+                garatgePropi = false;
+            }
+
+            Titular tituar1 = new Titular(nom, cognoms, dataNaixement, asseguranca, garatgePropi);
+
+            Console.WriteLine("Titular agregat correctamet.");
             Console.ReadLine();
             Console.Clear();
         }
