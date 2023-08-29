@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.ConstrainedExecution;
 using System.Text.RegularExpressions;
 
 namespace M6
@@ -20,20 +21,90 @@ namespace M6
             //  3) Afegir-li dues rodes traseres demanant a l’usuari la marca i el diametre.
             //  4) Afegir-li dues rodes davanteres demanant a l’usuari la marca i el diametre.
 
-            var (matricula, marca, color) = DemanarDadesCotxe();
-            Cotxe cotxe1 = new Cotxe(matricula, marca, color);
-            cotxe1.AfegirRodesDavanteres();
-            cotxe1.AfegirRodesTraseres();
-
-            cotxe1.ToString();
 
             //FASE 2:
             //Millorar el codi anterior comprovant la informació necesaria alhora de crear els objectes. S’ha de tenir en compte:
             //1) Una matrícula ha de tenir 4 números i dues o tres lletres.
             //2) Un diametre de la roda ha de ser superior a 0.4 i inferior a 4
+
+
+            //FASE 3:
+            //Modifica el projecte anterior afegint els mètodes necessaris a Bike, de manera que es pugui afegir rodes davanteres i traseres.
+
+            //Modificar el Main anterior, afegint la opció de Bike o Car:
+            //  0) Preguntar a l’usuari si vol crear un cotxe o una moto.
+            //  1) Demanar a l’usuari la matrícula, la marca i el seu color.
+            //  2) Crear el vehícle amb les dades anteriors.
+            //  3) Afegir - li les rodes traseres corresponents, demanant a l’usuari la marca i el diametre.
+            //  4) Afegir - li les rodes davanteres corresponents, demanant a l’usuari la marca i el diametre.
+
+            IniciarPrograma();
         }
 
-        public static (string Matricula, string Marca, string Color) DemanarDadesCotxe()
+        public static void IniciarPrograma()
+        {
+            while (true)
+            {
+                Console.WriteLine("Indica quin vehicle vols crear:");
+                Console.WriteLine("1. Cotxe");
+                Console.WriteLine("2. Moto");
+
+                try
+                {
+                    int num = int.Parse(Console.ReadLine());
+
+                    switch (num) {
+                        case 1:
+                            Console.Clear();
+                            CrearCotxe();
+                            break;
+                        case 2:
+                            Console.Clear();
+                            CrearMoto();
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Número no vàlid. Torna-ho a intentar.\n");
+                            break;
+                    }
+                }
+                catch
+                {
+                    Console.Clear();
+                    Console.WriteLine("Has de escriure un número vàlid!\n");
+                }
+            }
+        }
+
+        public static void CrearCotxe()
+        {
+            var (matricula, marca, color) = DemanarDadesBasiques();
+            Cotxe cotxe1 = new Cotxe(matricula, marca, color);
+
+            cotxe1.AfegirRodesDavanteres();
+            cotxe1.AfegirRodesTraseres();
+
+            cotxe1.ToString();
+
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public static void CrearMoto()
+        {
+            var (matricula, marca, color) = DemanarDadesBasiques();
+            Moto moto1 = new Moto(matricula, marca, color);
+
+            moto1.AfegirRodesDavanteres();
+            moto1.AfegirRodesTraseres();
+
+            moto1.ToString();
+
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public static (string Matricula, string Marca, string Color) DemanarDadesBasiques()
         {
             string matricula = IngresarMatricula();
 
@@ -52,7 +123,7 @@ namespace M6
             string matricula = "";
             bool matriculaValida = false;
 
-            Console.Write("Ingressa la matrícula del cotxe: ");
+            Console.Write("Ingressa la matrícula: ");
 
             while (matriculaValida == false)
             {

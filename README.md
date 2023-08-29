@@ -18,7 +18,7 @@
 
 <!-- ## M6 Exercicio Vehicles
 [Enunciados M6 (pdf)]()
-- Milestone 1: 
+- Milestone 1: Programa de creacion de moto o coche, con verificación de matrícula y otros.
 - Milestone 2: 
 - Milestone 3:  -->
 
