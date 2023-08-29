@@ -16,11 +16,11 @@
 - Milestone 2: Añadir 3 empleados más y validar sueldos.
 - Milestone 3: Añadir sueldos mensuales y anuales, ayuda a los voluntarios y bonus anual.
 
-<!-- ## M6 Exercicio Vehicles
-[Enunciados M6 (pdf)]()
+## M6 Exercicio Vehicles
+<!-- [Enunciados M6 (pdf)]() -->
 - Milestone 1: Programa de creacion de moto o coche, con verificación de matrícula y otros.
-- Milestone 2: 
-- Milestone 3:  -->
+- Milestone 2: Agrega clase camión, personas, titulares, conductores y atributos, comprobar la licencia etc.
+- Milestone 3: Acabar de crear el menú para poder añadir en listas los registros.
 
 <!-- ## Notas
 
