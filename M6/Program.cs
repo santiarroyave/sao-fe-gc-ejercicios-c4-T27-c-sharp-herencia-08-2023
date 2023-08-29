@@ -24,8 +24,8 @@ namespace M6
 
             //FASE 2:
             //Millorar el codi anterior comprovant la informació necesaria alhora de crear els objectes. S’ha de tenir en compte:
-            //1) Una matrícula ha de tenir 4 números i dues o tres lletres.
-            //2) Un diametre de la roda ha de ser superior a 0.4 i inferior a 4
+            //  1) Una matrícula ha de tenir 4 números i dues o tres lletres.
+            //  2) Un diametre de la roda ha de ser superior a 0.4 i inferior a 4
 
 
             //FASE 3:
