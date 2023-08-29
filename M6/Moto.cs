@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace M6
 {
-    internal class Vehicles
+    internal class Moto : Vehicles
     {
-        
+        const int DEF_QUANT_RODES = 2;
+        //public Motos()
+        //{
+
+        //}
     }
 }
